@@ -3,13 +3,13 @@ kind: Kustomization
 namespace: realtime-dev
 nameSuffix: -dev
 resources:
-- ../../bases/realtimeapp
-- namespace.yaml
+  - ../../bases
+  - namespace.yaml
 transformers:
-- labels.yaml
+  - labels.yaml
 replicas:
-- count: 1
-  name: realtime
+  - count: 1
+    name: realtime
 images:
-- name: gbaeke/flux-rt
-  newTag: sha-11e921f
+  - name: gbaeke/flux-rt
+    newTag: sha-11e921f
